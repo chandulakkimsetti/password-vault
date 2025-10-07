@@ -11,6 +11,7 @@ interface VaultItem {
   _id: string;
   title: string;
   username: string;
+  password_encrypted: string;
 }
 
 export default function VaultPage() {
