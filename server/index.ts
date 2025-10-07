@@ -3,7 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import authRoutes from './src/routes/auth.js';
-
+import vaultRoutes from './src/routes/vault.js';
 dotenv.config();
 
 const app = express();
@@ -28,6 +28,7 @@ app.get('/api', (req: Request, res: Response) => {
 });
 
 app.use('/api/auth', authRoutes);
+app.use('/api/vault', vaultRoutes);
 
 app.listen(port, () => {
   console.log(`🚀 Server is running on http://localhost:${port}`);
