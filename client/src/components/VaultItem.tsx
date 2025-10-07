@@ -3,8 +3,22 @@
 import { useState } from 'react';
 import { decryptData, encryptData } from '@/utils/encryption';
 import styles from '../app/auth.module.css';
+interface Item {
+  _id: string;
+  title: string;
+  username: string;
+  password_encrypted: string;
+}
 
-export default function VaultItem({ item, onDelete, onUpdate }) {
+interface VaultItemProps {
+  item: Item;
+  onDelete: (id: string) => void;
+  onUpdate: (item: Item) => void;
+}
+
+
+
+export default function VaultItem({ item, onDelete, onUpdate }: VaultItemProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [editData, setEditData] = useState({
     title: item.title,
