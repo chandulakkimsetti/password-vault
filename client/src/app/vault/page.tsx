@@ -47,7 +47,7 @@ export default function VaultPage() {
   const handleDeleteItem = async (id: string) => {
     if (!token) return;
 
-    await fetch(`http://localhost:3001/api/vault/${id}`, {
+    await fetch(`${API_URL}/api/vault/${id}`, {
       method: 'DELETE',
       headers: {
         'x-auth-token': token,

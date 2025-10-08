@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import { decryptData, encryptData } from '@/utils/encryption';
 import styles from '../app/auth.module.css';
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+
 interface Item {
   _id: string;
   title: string;
@@ -49,7 +52,7 @@ export default function VaultItem({ item, onDelete, onUpdate }: VaultItemProps) 
     // Encrypt the new password if it was changed
     const encryptedPassword = encryptData(editData.password);
 
-    const response = await fetch(`http://localhost:3001/api/vault/${item._id}`, {
+    const response = await fetch(`${API_URL}/api/vault/${item._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

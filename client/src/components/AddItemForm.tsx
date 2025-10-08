@@ -4,6 +4,8 @@ import { useState } from 'react';
 import styles from '../app/auth.module.css';
 import { encryptData } from '@/utils/encryption';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+
 // This defines a function prop that the component will receive
 interface AddItemFormProps {
   onItemAdded: () => void;
@@ -36,7 +38,7 @@ export default function AddItemForm({ onItemAdded }: AddItemFormProps) {
       url: item.url
     };
 
-    await fetch('http://localhost:3001/api/vault', {
+    await fetch(`${API_URL}/api/vault`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
