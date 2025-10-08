@@ -20,10 +20,12 @@ export default function VaultPage() {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+
   const fetchItems = useCallback(async () => {
     if (token) {
       try {
-        const response = await fetch('http://localhost:3001/api/vault', {
+        const response = await fetch(`${API_URL}/api/vault`, {
           headers: { 'x-auth-token': token },
         });
         const data = await response.json();

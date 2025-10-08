@@ -4,6 +4,8 @@
 import { useState } from 'react';
 import styles from '../auth.module.css'; // We'll create this file next
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001";
+
 export default function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,7 +15,7 @@ export default function Register() {
     e.preventDefault();
     setMessage('');
 
-    const response = await fetch('http://localhost:3001/api/auth/register', {
+    const response = await fetch(`${API_URL}/api/auth/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
