@@ -15,13 +15,13 @@
   text-decoration: none;
 }
 
-.navbar-links a {
+.navbarLinks a {
   color: white;
   text-decoration: none;
   margin-left: 15px;
 }
 
-.navbar-links a:hover {
+.navbarLinks a:hover {
   color: #ddd;
 }
 
