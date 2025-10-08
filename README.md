@@ -6,7 +6,7 @@ A full-stack, secure password manager built with Next.js, Node.js, and MongoDB, 
 
 ## 🚀 Live Demo
 
-* **Front-End (Vercel):** `https://password-vault-pjdz6ltnm-chandus-projects-bd9f6a47.vercel.app/`
+* **Front-End (Vercel):** `https://password-vault-two-tawny.vercel.app/`
 * **Back-End (Render):** `https://password-vault-api-rc2u.onrender.com`
 
 ---
